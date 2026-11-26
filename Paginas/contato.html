@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a história do BurguerFlow, nossa equipe e entre em contato conosco.">
+  <title>Sobre & Contato | BurguerFlow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-burguer sticky-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">🍔 Burguer<span>Flow</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+            <li class="nav-item"><a class="nav-link" href="detalhes.html">Monte o seu Burguer</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contato.html">Sobre & Contato</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" id="btn-contraste" class="btn btn-outline-light btn-sm" aria-pressed="false">Alto Contraste</button>
+            <a href="pedido.html" class="btn btn-warning fw-bold btn-sm">
+              🛒 Pedido <span id="contador-carrinho" class="badge bg-dark text-white">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="container my-5">
+    <!-- História e Equipe -->
+    <section class="row g-4 align-items-center mb-5" aria-labelledby="titulo-sobre">
+      <div class="col-lg-6">
+        <span class="categoria-tag">Nossa História</span>
+        <h1 id="titulo-sobre" class="titulo-secao">Paixão pela brasa e tecnologia</h1>
+        <p>O <strong>BurguerFlow</strong> nasceu com o objetivo de unir o preparo artesanal de hambúrgueres feitos na brasa a uma plataforma digital rápida, acessível e livre de erros de anotação.</p>
+        <p>Este sistema foi projetado e desenvolvido para a disciplina de <strong>Desenvolvimento de Aplicações Web I (2026)</strong>, aplicando HTML5 semântico, CSS3 moderno, Bootstrap, acessibilidade e JavaScript.</p>
+
+        <h2 class="h5 fw-bold mt-4">Equipe Desenvolvedora</h2>
+        <ul>
+          <li><strong>Nicolas Luâ Nunes Paulino</strong></li>
+          <li><strong>Izabela Marcêdo</strong></li>
+          <li><strong>Maria Eduarda Cantalice</strong></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card-produto p-3">
+          <h2 class="h5 fw-bold mb-3">Horários de Funcionamento</h2>
+          <table class="table table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Dia da Semana</th>
+                <th>Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Segunda-feira</td>
+                <td>Fechado (Manutenção)</td>
+              </tr>
+              <tr>
+                <td>Terça a Quinta</td>
+                <td>18h00 às 23h00</td>
+              </tr>
+              <tr>
+                <td>Sexta a Domingo</td>
+                <td>18h00 às 23h59</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section class="row g-4" aria-labelledby="titulo-contato">
+      <div class="col-lg-7">
+        <form id="form-contato" class="card-produto p-4">
+          <h2 id="titulo-contato" class="h4 fw-bold mb-3">Fale Conosco</h2>
+          <p class="small">Tem alguma dúvida, sugestão ou deseja reservar para eventos? Envie uma mensagem:</p>
+
+          <div class="mb-3">
+            <label for="contato-nome" class="form-label">Seu Nome *</label>
+            <input type="text" id="contato-nome" class="form-control" minlength="3" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contato-email" class="form-label">Seu E-mail *</label>
+            <input type="email" id="contato-email" class="form-control" required placeholder="nome@exemplo.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="contato-assunto" class="form-label">Assunto *</label>
+            <select id="contato-assunto" class="form-select" required>
+              <option value="">Selecione uma opção...</option>
+              <option value="duvida">Dúvida sobre o cardápio</option>
+              <option value="elogio">Elogio ou Sugestão</option>
+              <option value="suporte">Problema com pedido</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="contato-mensagem" class="form-label">Mensagem *</label>
+            <textarea id="contato-mensagem" class="form-control" rows="4" minlength="10" maxlength="500" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-burguer">Enviar Mensagem</button>
+          <div id="feedback-contato" class="alert alert-success mt-3 d-none" role="status"></div>
+        </form>
+      </div>
+
+      <aside class="col-lg-5">
+        <div class="card-produto p-4 h-100">
+          <h2 class="h4 fw-bold mb-3">Onde Estamos</h2>
+          <p class="small"><strong>Endereço:</strong> Av. Principal, 1024 — Centro, Campina Grande - PB</p>
+          <p class="small"><strong>Telefone:</strong> (83) 3333-4444</p>
+          <div class="ratio ratio-16x9 rounded overflow-hidden border mt-2">
+            <iframe
+              title="Mapa de localização do BurguerFlow"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-35.895%2C-7.235%2C-35.875%2C-7.215&layer=mapnik"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h2 class="h5 fw-bold text-white">🍔 BurguerFlow</h2>
+          <p class="small">Hamburgueria artesanal fictícia desenvolvida como Projeto Final da disciplina de Desenvolvimento de Aplicações Web I (2026).</p>
+        </div>
+        <div class="col-md-4">
+          <h2 class="h5 fw-bold text-white">Navegação</h2>
+          <ul class="list-unstyled small">
+            <li><a href="../index.html">Página Inicial</a></li>
+            <li><a href="cardapio.html">Cardápio Completo</a></li>
+            <li><a href="detalhes.html">Monte o seu Burguer</a></li>
+            <li><a href="pedido.html">Carrinho e Checkout</a></li>
+            <li><a href="contato.html">Sobre Nós e Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h2 class="h5 fw-bold text-white">Horário & Local</h2>
+          <p class="small mb-1">Terça a Domingo: 18h00 às 23h30</p>
+          <p class="small mb-1">Av. Principal, 1024 — Centro</p>
+          <p class="small mb-0">Equipe: Nicolas Luâ, Izabela Marcêdo e Maria Eduarda Cantalice</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* =========================================================
+   BURGUERFLOW - ESTILOS GLOBAIS E COMPONENTES PRÓPRIOS
+   ========================================================= */
+
+:root {
+  --cor-primaria: #d9381e;       /* Vermelho artesanal */
+  --cor-primaria-escura: #a82611;
+  --cor-secundaria: #f59e0b;     /* Amarelo cheddar */
+  --cor-fundo: #fdfbf7;
+  --cor-superficie: #ffffff;
+  --cor-texto: #222222;
+  --cor-texto-suave: #555555;
+  --cor-borda: #e5e0d8;
+  --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --raio-borda: 0.75rem;
+  --transicao: all 0.25s ease-in-out;
+}
+
+/* Tema Alto Contraste (Acessibilidade) */
+body.alto-contraste {
+  --cor-primaria: #ffff00;
+  --cor-primaria-escura: #cccc00;
+  --cor-secundaria: #00ffff;
+  --cor-fundo: #000000;
+  --cor-superficie: #121212;
+  --cor-texto: #ffffff;
+  --cor-texto-suave: #e0e0e0;
+  --cor-borda: #ffffff;
+  --sombra-card: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  transition: var(--transicao);
+}
+
+/* Foco visível para navegação por teclado (Acessibilidade) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 3px;
+}
+
+/* Skip link para leitores de tela e teclado */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 1rem;
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 2000;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Navbar Customizada */
+.navbar-burguer {
+  background-color: #1a1412;
+  border-bottom: 3px solid var(--cor-primaria);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: #ffffff !important;
+}
+
+.navbar-brand span {
+  color: var(--cor-secundaria);
+}
+
+.nav-link {
+  color: #f3f3f3 !important;
+  font-weight: 500;
+  position: relative;
+  transition: var(--transicao);
+}
+
+/* Pseudo-elemento para sublinhado animado no menu */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  width: 0;
+  height: 2px;
+  background-color: var(--cor-secundaria);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: calc(100% - 1rem);
+}
+
+/* Seção Hero (Banner Principal) */
+.hero-section {
+  background: linear-gradient(rgba(20, 15, 13, 0.78), rgba(20, 15, 13, 0.85)),
+    url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: #1a1412;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.btn-burguer {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  border: 2px solid var(--cor-primaria);
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.5rem;
+  transition: var(--transicao);
+}
+
+.btn-burguer:hover {
+  background-color: var(--cor-primaria-escura);
+  border-color: var(--cor-primaria-escura);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body.alto-contraste .btn-burguer {
+  color: #000000;
+}
+
+/* Títulos de Seção */
+.titulo-secao {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--cor-texto);
+}
+
+.subtitulo-secao {
+  color: var(--cor-texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+/* Grid Responsivo Próprio (CSS Grid) */
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Card de Produto */
+.card-produto {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transicao);
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+}
+
+.card-produto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.card-produto-corpo {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.categoria-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  letter-spacing: 0.5px;
+}
+
+.preco-destaque {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--cor-primaria);
+}
+
+/* Seção Diferenciais (Flexbox) */
+.diferenciais-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.diferencial-item {
+  flex: 1 1 260px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-card);
+}
+
+/* Rodapé */
+footer {
+  background-color: #1a1412;
+  color: #e5e5e5;
+  border-top: 4px solid var(--cor-primaria);
+  margin-top: 4rem;
+}
+
+footer a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--cor-secundaria);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   MEDIA QUERIES (TABLET E SMARTPHONE)
+   ========================================================= */
+@media (max-width: 992px) {
+  .grid-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    min-height: 60vh;
+    text-align: center;
+  }
+}
